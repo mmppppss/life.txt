@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="#282828"
+	android:orientation="vertical"
+	android:gravity="center|center_horizontal">
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:gravity="center_vertical">
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:inputType="date"
+			android:layout_height="wrap_content"
+			android:ems="4"
+			android:hint="00/00/00"
+			android:textColor="#EBDBB2"
+			android:textColorHint="#949494"
+			android:id="@+id/maindate"
+			android:typeface="monospace"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:ems="6"
+			android:hint="detalle"
+			android:textColor="#EBDBB2"
+			android:textColorHint="#949494"
+			android:id="@+id/maindetalle"
+			android:typeface="monospace"/>
+
+		<EditText
+			android:layout_width="wrap_content"
+			android:inputType="numberDecimal|numberSigned"
+			android:layout_height="wrap_content"
+			android:ems="3"
+			android:hint="0.00"
+			android:textColor="#EBDBB2"
+			android:textColorHint="#949494"
+			android:id="@+id/mainamount"
+			android:typeface="monospace"/>
+
+		<TextView
+			android:textColor="#EBDBB2"
+			android:layout_width="80dp"
+			android:layout_height="match_parent"
+			android:text="⸢       ⸣    ADD    ⸤       ⸥"
+			android:typeface="monospace"
+			android:gravity="center"
+			android:textStyle="bold"
+			android:lines="3"
+			android:id="@+id/mainButton1"
+			android:onClick="clickAdd"/>
+
+	</LinearLayout>
+
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:layout_marginBottom="10dp">
+
+		<TextView
+			android:textColor="#EBDBB2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="DATE"
+			android:id="@+id/rowDate"
+			android:ems="5"
+			android:layout_marginLeft="10dp"
+			android:typeface="monospace"
+			android:textStyle="bold"/>
+
+		<TextView
+			android:textColor="#EBDBB2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="DETALLE"
+			android:id="@+id/rowDetail"
+			android:ems="7"
+			android:typeface="monospace"
+			android:textStyle="bold"/>
+
+		<TextView
+			android:textColor="#EBDBB2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="MONTO"
+			android:ems="3"
+			android:id="@+id/rowPrice"
+			android:typeface="monospace"
+			android:textStyle="bold"/>
+
+		<TextView
+			android:textColor="#EBDBB2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Total:0BS"
+			android:id="@+id/maintotal"
+			android:layout_marginLeft="10dp"
+			android:gravity="right"
+			android:typeface="monospace"
+			android:textStyle="bold"/>
+
+	</LinearLayout>
+
+	<ListView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:id="@+id/lvpre"/>
+
+</LinearLayout>
+

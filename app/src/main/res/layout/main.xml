@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:gravity="top|center|center_horizontal"
+	android:layout_gravity="top|center"
+	android:background="#282828">
+
+	<LinearLayout
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center|center_vertical|center_horizontal">
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<EditText
+				android:id="@+id/dateNew"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ems="4"
+				android:textColor="#EBDBB2"
+				android:textColorHint="#949494"
+				android:hint="feb 31"
+				android:typeface="monospace"/>
+
+			<EditText
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:id="@+id/contentNew"
+				android:textColor="#EBDBB2"
+				android:textColorHint="#949494"
+				android:hint="task"
+				android:typeface="monospace"
+				android:minEms="6"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center|center_vertical">
+
+			<Spinner
+				android:id="@+id/spinCate"
+				android:layout_width="50dp"
+				android:layout_height="40dp"
+				android:textColor="#282828"
+				android:popupBackground="#EBDBB2"
+				android:background="#EBDBB2"
+				android:typeface="monospace"
+				android:textAlignment="textStart"/>
+
+			<TextView
+				android:textColor="#282828"
+				android:layout_width="wrap_content"
+				android:layout_height="40dp"
+				android:text="▼"
+				android:background="#EBDBB2"
+				android:gravity="left|center"
+				android:lines="3"/>
+
+			<TextView
+				android:onClick="add"
+				android:textColor="#EBDBB2"
+				android:layout_width="80dp"
+				android:layout_height="match_parent"
+				android:text="⸢       ⸣    ADD    ⸤       ⸥"
+				android:typeface="monospace"
+				android:gravity="center"
+				android:textStyle="bold"
+				android:lines="3"/>
+
+			<TextView
+				android:textColor="#EBDBB2"
+				android:layout_width="80dp"
+				android:layout_height="match_parent"
+				android:text="⸢       ⸣    PRE    ⸤       ⸥"
+				android:typeface="monospace"
+				android:gravity="center"
+				android:textStyle="bold"
+				android:lines="3"
+				android:layout_marginLeft="20dp"
+				android:id="@+id/mainGoPre"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+	<ListView
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:id="@+id/list"
+		android:dividerHeight="0dp"
+		android:paddingTop="10dp"
+		android:layout_marginBottom="30dp"
+		android:background="#846967"/>
+
+</LinearLayout>
+
