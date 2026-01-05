@@ -8,54 +8,72 @@
 	android:gravity="center|center_horizontal">
 
 	<LinearLayout
-		android:orientation="horizontal"
+		android:orientation="vertical"
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:gravity="center_vertical">
+		android:gravity="center_vertical|center_horizontal">
 
-		<EditText
-			android:layout_width="wrap_content"
-			android:inputType="date"
-			android:layout_height="wrap_content"
-			android:ems="4"
-			android:hint="00/00/00"
-			android:textColor="#EBDBB2"
-			android:textColorHint="#949494"
-			android:id="@+id/maindate"
-			android:typeface="monospace"/>
-
-		<EditText
+		<LinearLayout
+			android:orientation="horizontal"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:ems="6"
-			android:hint="detalle"
-			android:textColor="#EBDBB2"
-			android:textColorHint="#949494"
-			android:id="@+id/maindetalle"
-			android:typeface="monospace"/>
+			android:gravity="center_vertical"
+			android:layout_marginTop="20dp"
+			android:layout_margin="10dp">
 
-		<EditText
+			<EditText
+				android:layout_width="wrap_content"
+				android:inputType="date"
+				android:layout_height="wrap_content"
+				android:ems="5"
+				android:hint="00-00-00"
+				android:textColor="#EBDBB2"
+				android:textColorHint="#949494"
+				android:id="@+id/maindate"
+				android:typeface="monospace"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:ems="6"
+				android:hint="detalle"
+				android:textColor="#EBDBB2"
+				android:textColorHint="#949494"
+				android:id="@+id/maindetalle"
+				android:typeface="monospace"/>
+
+			<EditText
+				android:layout_width="wrap_content"
+				android:inputType="numberDecimal|numberSigned"
+				android:layout_height="wrap_content"
+				android:ems="3"
+				android:hint="0.00"
+				android:textColor="#EBDBB2"
+				android:textColorHint="#949494"
+				android:id="@+id/mainamount"
+				android:typeface="monospace"/>
+
+		</LinearLayout>
+
+		<LinearLayout
+			android:orientation="horizontal"
 			android:layout_width="wrap_content"
-			android:inputType="numberDecimal|numberSigned"
 			android:layout_height="wrap_content"
-			android:ems="3"
-			android:hint="0.00"
-			android:textColor="#EBDBB2"
-			android:textColorHint="#949494"
-			android:id="@+id/mainamount"
-			android:typeface="monospace"/>
+			android:gravity="center_vertical">
 
-		<TextView
-			android:textColor="#EBDBB2"
-			android:layout_width="80dp"
-			android:layout_height="match_parent"
-			android:text="⸢       ⸣    ADD    ⸤       ⸥"
-			android:typeface="monospace"
-			android:gravity="center"
-			android:textStyle="bold"
-			android:lines="3"
-			android:id="@+id/mainButton1"
-			android:onClick="clickAdd"/>
+			<TextView
+				android:textColor="#EBDBB2"
+				android:layout_width="80dp"
+				android:layout_height="match_parent"
+				android:text="⸢       ⸣    ADD    ⸤       ⸥"
+				android:typeface="monospace"
+				android:gravity="center"
+				android:textStyle="bold"
+				android:lines="3"
+				android:id="@+id/mainButton1"
+				android:onClick="clickAdd"/>
+
+		</LinearLayout>
 
 	</LinearLayout>
 
@@ -113,7 +131,8 @@
 	<ListView
 		android:layout_width="wrap_content"
 		android:layout_height="wrap_content"
-		android:id="@+id/lvpre"/>
+		android:id="@+id/lvpre"
+		android:layout_margin="10dp"/>
 
 </LinearLayout>
 

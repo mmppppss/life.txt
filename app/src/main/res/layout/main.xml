@@ -11,7 +11,9 @@
 		android:orientation="vertical"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:gravity="center|center_vertical|center_horizontal">
+		android:gravity="center|center_vertical|center_horizontal"
+		android:layout_marginTop="20dp"
+		android:layout_margin="10dp">
 
 		<LinearLayout
 			android:orientation="horizontal"
@@ -90,17 +92,12 @@
 
 		</LinearLayout>
 
-	</LinearLayout>
+		<ListView
+			android:id="@+id/list"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"/>
 
-	<ListView
-		android:orientation="vertical"
-		android:layout_width="match_parent"
-		android:layout_height="wrap_content"
-		android:id="@+id/list"
-		android:dividerHeight="0dp"
-		android:paddingTop="10dp"
-		android:layout_marginBottom="30dp"
-		android:background="#846967"/>
+	</LinearLayout>
 
 </LinearLayout>
 

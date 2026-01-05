@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/item"
+	android:orientation="horizontal"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:gravity="center_vertical"
+	android:layout_margin="15dp">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="match_parent"
+		android:text="[×] (T)"
+		android:textColor="#ebdbb2"
+		android:id="@+id/itemstatus"
+		android:textIsSelectable="true"
+		android:typeface="monospace"
+		android:gravity="center"
+		android:layout_marginLeft="10dp"/>
+
+	<TextView
+		android:id="@+id/itemdate"
+		android:textColor="#ebdbb2"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="ene 24 feb 24"
+		android:lines="2"
+		android:layout_margin="3dp"
+		android:typeface="monospace"
+		android:ems="4"
+		android:minLines="2"
+		android:textIsSelectable="true"
+		android:gravity="center"/>
+
+	<TextView
+		android:id="@+id/itemContent"
+		android:textColor="#ebdbb2"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:text="hacer algo @jsjd"
+		android:typeface="monospace"
+		android:textIsSelectable="true"
+		android:layout_margin="5dp"
+	/>
+
+</LinearLayout>
+
