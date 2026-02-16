@@ -17,6 +17,7 @@
 		android:textIsSelectable="true"
 		android:typeface="monospace"
 		android:gravity="center"
+		android:padding="5dp"
 		android:layout_marginLeft="10dp"/>
 
 	<TextView
@@ -31,7 +32,8 @@
 		android:ems="4"
 		android:minLines="2"
 		android:textIsSelectable="true"
-		android:gravity="center"/>
+		android:gravity="center"
+		android:padding="5dp"/>
 
 	<TextView
 		android:id="@+id/itemContent"
@@ -42,7 +44,7 @@
 		android:typeface="monospace"
 		android:textIsSelectable="true"
 		android:layout_margin="5dp"
-	/>
+		android:padding="5dp"/>
 
 </LinearLayout>
 

@@ -50,10 +50,10 @@ class ItemsAdapter extends ArrayAdapter<String[]> {
 
     private void configureListeners(TextView status, TextView content, TextView date, String[] text) {
         status.setOnClickListener(new StatusClickListener(status, text));
-        status.setOnLongClickListener(new DeleteClickListener());
+        status.setOnLongClickListener(new DeleteClickListener(text[0]));
         content.setOnClickListener(new EditClickListener());
         content.setOnFocusChangeListener(new UpdateFocusListener(text));
-        date.setOnLongClickListener(new DeleteClickListener());
+        date.setOnLongClickListener(new DeleteClickListener(text[0]));
     }
 
     private class StatusClickListener implements OnClickListener {
@@ -78,13 +78,18 @@ class ItemsAdapter extends ArrayAdapter<String[]> {
     }
 
     private class DeleteClickListener implements OnLongClickListener {
+		private  String tv;
+		public DeleteClickListener(String tv){
+			this.tv =tv;
+		}
+		
         @Override
         public boolean onLongClick(View p1) {
-            hl.deleteLife(Integer.parseInt(((TextView) p1).getText().toString().split("\\[")[1].split("\\]")[0]));
+            hl.deleteLife(Integer.parseInt(tv));
             list.setAdapter(null);
             ItemsAdapter ia = new ItemsAdapter(ct, hl.getDataLife(), hl, list);
             list.setAdapter(ia);
-            return false;
+			return true;
         }
     }
 
