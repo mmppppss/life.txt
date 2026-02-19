@@ -42,7 +42,7 @@
 		android:layout_height="wrap_content"
 		android:text="hacer algo @jsjd"
 		android:typeface="monospace"
-		android:textIsSelectable="true"
+		android:textIsSelectable="false"
 		android:layout_margin="5dp"
 		android:padding="5dp"/>
 

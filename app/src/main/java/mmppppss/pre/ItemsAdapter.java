@@ -1,7 +1,7 @@
 package mmppppss.pre;
 
+import android.app.*;
 import android.content.*;
-import android.util.*;
 import android.view.*;
 import android.view.View.*;
 import android.widget.*;
@@ -12,13 +12,15 @@ class ItemsAdapter extends ArrayAdapter<String[]> {
     private ListView list;
     private Context ct;
     private DBmanager hl;
+	private Activity ac;
 
-    public ItemsAdapter(Context context, ArrayList<String[]> values, DBmanager hl, ListView li) {
+    public ItemsAdapter(Context context, Activity ac, ArrayList<String[]> values, DBmanager hl, ListView li) {
         super(context, R.layout.item, values);
         this.values = values;
         this.list = li;
         this.ct = context;
         this.hl = hl;
+		this.ac = ac;
     }
 
     @Override
@@ -51,10 +53,13 @@ class ItemsAdapter extends ArrayAdapter<String[]> {
     private void configureListeners(TextView status, TextView content, TextView date, String[] text) {
         status.setOnClickListener(new StatusClickListener(status, text));
         status.setOnLongClickListener(new DeleteClickListener(text[0]));
-        content.setOnClickListener(new EditClickListener());
-        content.setOnFocusChangeListener(new UpdateFocusListener(text));
+        content.setOnClickListener(new EditClickListener(text, content));
         date.setOnLongClickListener(new DeleteClickListener(text[0]));
     }
+	public void updateText(int position, String newText) {
+		values.get(position)[3] = newText;
+		notifyDataSetChanged();
+	}
 
     private class StatusClickListener implements OnClickListener {
         private TextView status;
@@ -87,35 +92,26 @@ class ItemsAdapter extends ArrayAdapter<String[]> {
         public boolean onLongClick(View p1) {
             hl.deleteLife(Integer.parseInt(tv));
             list.setAdapter(null);
-            ItemsAdapter ia = new ItemsAdapter(ct, hl.getDataLife(), hl, list);
+            ItemsAdapter ia = new ItemsAdapter(ct, ac, hl.getDataLife(), hl, list);
             list.setAdapter(ia);
 			return true;
         }
     }
 
     private class EditClickListener implements OnClickListener {
+		private String[] text;
+		private TextView tv;
+		public EditClickListener(String[] text, TextView tv) {
+			this.text = text;
+			this.tv = tv;
+		}
         @Override
         public void onClick(View p1) {
             TextView upd = (TextView) p1;
-            upd.setOnClickListener(null);
-            upd.setInputType(1);
-            upd.setClickable(false);
-        }
-    }
-
-    private class UpdateFocusListener implements OnFocusChangeListener {
-        private String[] text;
-
-        public UpdateFocusListener(String[] text) {
-            this.text = text;
-        }
-
-        @Override
-        public void onFocusChange(View p1, boolean p2) {
-            TextView upd = (TextView) p1;
-            upd.setClickable(false);
-            String textN = upd.getText().toString();
-            hl.updateDataLife(Integer.parseInt(text[0]), text[1], text[2], textN, text[4]);
+			int position = list.getPositionForView(p1);
+			EditDialogFragment edf = new EditDialogFragment(upd.getText().toString(), hl, text, position, list);
+			edf.show(ac.getFragmentManager(), "editdialog");
+	
         }
     }
 }

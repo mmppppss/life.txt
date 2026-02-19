@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical"
+	android:padding="16dp"
+	android:background="#282828">
+
+	<EditText
+		android:id="@+id/edit_text"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="txt"
+		android:textColor="#EBDBB2"
+		android:textColorHint="#928374"
+		android:padding="10dp"
+		android:typeface="monospace"
+		android:inputType="text"/>
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/btn_cancel"
+			android:text="Cancel"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="40dp"
+			android:textColor="#EBDBB2"
+			android:typeface="monospace"
+			android:gravity="center"
+			android:textStyle="bold"
+			android:background="#3c3836"
+			android:layout_marginRight="5dp"/>
+
+		<Button
+			android:id="@+id/btn_save"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="40dp"
+			android:textColor="#EBDBB2"
+			android:typeface="monospace"
+			android:gravity="center"
+			android:textStyle="bold"
+			android:background="#3c3836"
+			android:text="Save"
+			android:layout_marginLeft="5dp"/>
+
+	</LinearLayout>
+
+</LinearLayout>
+

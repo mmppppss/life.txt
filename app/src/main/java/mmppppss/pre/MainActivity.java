@@ -59,7 +59,7 @@ public class MainActivity extends Activity {
     }
 
     private void loadData() {
-        adapter = new ItemsAdapter(this, hl.getDataLife(), hl, list);
+        adapter = new ItemsAdapter(this,this, hl.getDataLife(), hl, list);
         list.setAdapter(adapter);
     }
 
